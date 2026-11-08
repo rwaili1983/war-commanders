@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: war-commanders-demo
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: MAX_ROOMS
+        value: "30"
+      - key: MAX_SSE
+        value: "60"
+      - key: LAN_DISCOVERY
+        value: "0"
